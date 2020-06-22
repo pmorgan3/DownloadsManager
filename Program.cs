@@ -17,6 +17,8 @@ namespace DownloadsManager
         const string ISO_FOLDER = DOWNLOADS_FOLDER + "\\ISOs";
         const string EXE_FOLDER = DOWNLOADS_FOLDER + "\\EXEs";
         const string ZIP_FOLDER = DOWNLOADS_FOLDER + "\\ZIPs";
+        const string VIDEO_FOLDER = DOWNLOADS_FOLDER + "\\VIDEOs";
+        const string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\MUSIC";
 
 
         /** 
@@ -34,6 +36,8 @@ namespace DownloadsManager
             Directory.CreateDirectory(ISO_FOLDER);
             Directory.CreateDirectory(EXE_FOLDER);
             Directory.CreateDirectory(ZIP_FOLDER);
+            Directory.CreateDirectory(VIDEO_FOLDER);
+            Directory.CreateDirectory(AUDIO_FOLDER);
         }
 
         static void MoveFile(string dest_folder, string extention)
@@ -53,10 +57,19 @@ namespace DownloadsManager
             Program.MoveFile(PICTURES_FOLDER, "*.png");
             Program.MoveFile(PICTURES_FOLDER, "*.jpeg");
             Program.MoveFile(PICTURES_FOLDER, "*.jpg");
+            Program.MoveFile(PICTURES_FOLDER, "*.gif");
             Program.MoveFile(ISO_FOLDER, "*.iso");
             Program.MoveFile(EXE_FOLDER, "*.exe");
             Program.MoveFile(EXE_FOLDER, "*.msi");
             Program.MoveFile(ZIP_FOLDER, "*.zip");
+            Program.MoveFile(AUDIO_FOLDER, "*.mp3");
+            Program.MoveFile(AUDIO_FOLDER, "*.wav");
+            Program.MoveFile(AUDIO_FOLDER, "*.wma");
+            Program.MoveFile(VIDEO_FOLDER, "*.mp4");
+            Program.MoveFile(VIDEO_FOLDER, "*.mov");
+            Program.MoveFile(VIDEO_FOLDER, "*wmv");
+            Program.MoveFile(VIDEO_FOLDER, "*webm");
+
 
         }
     }
