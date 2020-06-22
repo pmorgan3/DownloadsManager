@@ -8,3 +8,5 @@ Organizes your Downloads folder into a few sub folders:
 - Downloads\PICs\
 - Downloads\ISOs\
 - Downloads\ZIPs\
+- Downloads\VIDEOs\
+- Downloads\AUDIO\
