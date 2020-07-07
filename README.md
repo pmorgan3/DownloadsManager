@@ -7,6 +7,8 @@ Organizes your Downloads folder into a few sub folders:
 - Downloads\EXEs\
 - Downloads\PICs\
 - Downloads\ISOs\
-- Downloads\ZIPs\
+- Downloads\Archives\
 - Downloads\VIDEOs\
-- Downloads\AUDIO\
+- Downloads\MUSIC\
+- Downloads\DOCUMENTS\
+- Downloads\FONTS\
