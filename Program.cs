@@ -21,6 +21,7 @@ namespace DownloadsManager
         static string VIDEO_FOLDER = DOWNLOADS_FOLDER + "\\VIDEOs";
         static string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\MUSIC";
         static string DOCUMENTS_FOLDER = DOWNLOADS_FOLDER + "\\DOCUMENTS";
+        static string FONTS_FOLDER = DOWNLOADS_FOLDER + "\\FONTS";
 
         /** 
          * Checks to see whether the necessary folders are present
@@ -44,6 +45,7 @@ namespace DownloadsManager
             Directory.CreateDirectory(ZIP_FOLDER);
             Directory.CreateDirectory(VIDEO_FOLDER);
             Directory.CreateDirectory(AUDIO_FOLDER);
+            Directory.CreateDirectory(FONTS_FOLDER);
         }
 
         static void MoveFile(string dest_folder, string extention)
@@ -59,28 +61,46 @@ namespace DownloadsManager
         static void Main(string[] args)
         {
             Program.Init();
+
+            // PDFs
             Program.MoveFile(PDF_FOLDER, "*.pdf");
+            // Images
             Program.MoveFile(PICTURES_FOLDER, "*.png");
             Program.MoveFile(PICTURES_FOLDER, "*.jpeg");
             Program.MoveFile(PICTURES_FOLDER, "*.jpg");
             Program.MoveFile(PICTURES_FOLDER, "*.gif");
+            Program.MoveFile(PICTURES_FOLDER, "*.bmp");
+            Program.MoveFile(PICTURES_FOLDER, "*.tiff");
+            Program.MoveFile(PICTURES_FOLDER, "*.raw");
+            Program.MoveFile(PICTURES_FOLDER, "*.svg");
+            Program.MoveFile(PICTURES_FOLDER, "*.ico");
+            Program.MoveFile(PICTURES_FOLDER, "*.jfif");
+            // ISOs
             Program.MoveFile(ISO_FOLDER, "*.iso");
+            // Executables
             Program.MoveFile(EXE_FOLDER, "*.exe");
             Program.MoveFile(EXE_FOLDER, "*.msi");
+            Program.MoveFile(EXE_FOLDER, "*.bat");
+            // Archives
             Program.MoveFile(ZIP_FOLDER, "*.zip");
             Program.MoveFile(ZIP_FOLDER, "*.tar.gz");
             Program.MoveFile(ZIP_FOLDER, "*.pkg");
             Program.MoveFile(ZIP_FOLDER, "*.tar");
             Program.MoveFile(ZIP_FOLDER, "*.rar");
             Program.MoveFile(ZIP_FOLDER, "*.7z");
+            // Audio
             Program.MoveFile(AUDIO_FOLDER, "*.mp3");
             Program.MoveFile(AUDIO_FOLDER, "*.wav");
             Program.MoveFile(AUDIO_FOLDER, "*.wma");
+            Program.MoveFile(AUDIO_FOLDER, "*.ogg");
+            // Videos
             Program.MoveFile(VIDEO_FOLDER, "*.mp4");
             Program.MoveFile(VIDEO_FOLDER, "*.mkv");
             Program.MoveFile(VIDEO_FOLDER, "*.mov");
-            Program.MoveFile(VIDEO_FOLDER, "*wmv");
-            Program.MoveFile(VIDEO_FOLDER, "*webm");
+            Program.MoveFile(VIDEO_FOLDER, "*.wmv");
+            Program.MoveFile(VIDEO_FOLDER, "*.webm");
+            Program.MoveFile(VIDEO_FOLDER, "*.avi");
+            // Documents
             Program.MoveFile(DOCUMENTS_FOLDER, "*.txt");
             Program.MoveFile(DOCUMENTS_FOLDER, "*.docx");
             Program.MoveFile(DOCUMENTS_FOLDER, "*.doc");
@@ -88,9 +108,13 @@ namespace DownloadsManager
             Program.MoveFile(DOCUMENTS_FOLDER, "*.pptx");
             Program.MoveFile(DOCUMENTS_FOLDER, "*.cfg");
             Program.MoveFile(DOCUMENTS_FOLDER, "*.config");
-
-
-
+            Program.MoveFile(DOCUMENTS_FOLDER, "*.xls");
+            Program.MoveFile(DOCUMENTS_FOLDER, "*.xlsx");
+            Program.MoveFile(DOCUMENTS_FOLDER, "*.csv");
+            // Fonts
+            Program.MoveFile(FONTS_FOLDER, "*.ttf");
+            Program.MoveFile(FONTS_FOLDER, "*.otf");
+            Program.MoveFile(FONTS_FOLDER, "*.chr");
 
         }
     }
