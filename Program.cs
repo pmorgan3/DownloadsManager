@@ -22,7 +22,6 @@ namespace DownloadsManager
         static string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\MUSIC";
         static string DOCUMENTS_FOLDER = DOWNLOADS_FOLDER + "\\DOCUMENTS";
 
-
         /** 
          * Checks to see whether the necessary folders are present
          **/
