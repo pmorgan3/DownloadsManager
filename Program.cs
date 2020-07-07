@@ -5,21 +5,22 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+
 // This App sorts my downloads folder by file type
 namespace DownloadsManager
 {   
     
     class Program
     {
-        const string DOWNLOADS_FOLDER = "C:\\Users\\pmorg\\Downloads";
-        const string PDF_FOLDER = DOWNLOADS_FOLDER + "\\PDFs";
-        const string PICTURES_FOLDER = DOWNLOADS_FOLDER + "\\Pics";
-        const string ISO_FOLDER = DOWNLOADS_FOLDER + "\\ISOs";
-        const string EXE_FOLDER = DOWNLOADS_FOLDER + "\\EXEs";
-        const string ZIP_FOLDER = DOWNLOADS_FOLDER + "\\Archives";
-        const string VIDEO_FOLDER = DOWNLOADS_FOLDER + "\\VIDEOs";
-        const string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\MUSIC";
-        const string DOCUMENTS_FOLDER = DOWNLOADS_FOLDER + "\\DOCUMENTS";
+        static string DOWNLOADS_FOLDER = "C:\\Users\\" + Environment.UserName +"\\Downloads";
+        static string PDF_FOLDER = DOWNLOADS_FOLDER + "\\PDFs";
+        static string PICTURES_FOLDER = DOWNLOADS_FOLDER + "\\Pics";
+        static string ISO_FOLDER = DOWNLOADS_FOLDER + "\\ISOs";
+        static string EXE_FOLDER = DOWNLOADS_FOLDER + "\\EXEs";
+        static string ZIP_FOLDER = DOWNLOADS_FOLDER + "\\Archives";
+        static string VIDEO_FOLDER = DOWNLOADS_FOLDER + "\\VIDEOs";
+        static string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\MUSIC";
+        static string DOCUMENTS_FOLDER = DOWNLOADS_FOLDER + "\\DOCUMENTS";
 
 
         /** 
@@ -27,6 +28,11 @@ namespace DownloadsManager
          **/
         static void Init()
         {
+            // Make sure the directory exists
+            // If it doesn't exist, the user probably has a custom downloads folder, so exit the program
+            if (!Directory.Exists(DOWNLOADS_FOLDER))
+                Environment.Exit;
+
             // Move the current process into the downloads folder
             Directory.SetCurrentDirectory(DOWNLOADS_FOLDER);
 
