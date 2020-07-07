@@ -18,10 +18,10 @@ namespace DownloadsManager
         static string ISO_FOLDER = DOWNLOADS_FOLDER + "\\ISOs";
         static string EXE_FOLDER = DOWNLOADS_FOLDER + "\\EXEs";
         static string ZIP_FOLDER = DOWNLOADS_FOLDER + "\\Archives";
-        static string VIDEO_FOLDER = DOWNLOADS_FOLDER + "\\VIDEOs";
-        static string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\MUSIC";
-        static string DOCUMENTS_FOLDER = DOWNLOADS_FOLDER + "\\DOCUMENTS";
-        static string FONTS_FOLDER = DOWNLOADS_FOLDER + "\\FONTS";
+        static string VIDEO_FOLDER = DOWNLOADS_FOLDER + "\\Videos";
+        static string AUDIO_FOLDER = DOWNLOADS_FOLDER + "\\Music";
+        static string DOCUMENTS_FOLDER = DOWNLOADS_FOLDER + "\\Documents";
+        static string FONTS_FOLDER = DOWNLOADS_FOLDER + "\\Fonts";
 
         /** 
          * Checks to see whether the necessary folders are present
@@ -31,7 +31,7 @@ namespace DownloadsManager
             // Make sure the directory exists
             // If it doesn't exist, the user probably has a custom downloads folder, so exit the program
             if (!Directory.Exists(DOWNLOADS_FOLDER))
-                Environment.Exit;
+                Environment.Exit(0);
 
             // Move the current process into the downloads folder
             Directory.SetCurrentDirectory(DOWNLOADS_FOLDER);
@@ -44,17 +44,18 @@ namespace DownloadsManager
             Directory.CreateDirectory(EXE_FOLDER);
             Directory.CreateDirectory(ZIP_FOLDER);
             Directory.CreateDirectory(VIDEO_FOLDER);
+            Directory.CreateDirectory(DOCUMENTS_FOLDER);
             Directory.CreateDirectory(AUDIO_FOLDER);
             Directory.CreateDirectory(FONTS_FOLDER);
         }
-
+        
         static void MoveFile(string dest_folder, string extention)
         {
             var files = Directory.EnumerateFiles(DOWNLOADS_FOLDER, extention);
             foreach (var currentFile in files)
             {
                 string fileName = currentFile.Substring(DOWNLOADS_FOLDER.Length + 1);
-                Directory.Move(currentFile, Path.Combine(dest_folder, fileName));
+                Directory.Move(sourceDirName: currentFile, destDirName: Path.Combine(path1: dest_folder, path2: fileName));
             }
         }
 
